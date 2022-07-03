@@ -1,4 +1,6 @@
-public class Animal {
+package animal;
+
+public abstract class Animal {
     private String name;
     private int age;
     private double weight;
@@ -9,7 +11,7 @@ public class Animal {
 
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
 
     }
@@ -38,33 +40,34 @@ public class Animal {
         this.color = color;
     }
 
-    public void Say() {
+    public void say() {
         System.out.println("Я говорю");
     }
-    public void Go() {
+
+    public void go() {
         System.out.println("Я иду");
 
     }
-    public void Drink() {
+
+    public void drink() {
         System.out.println("я пью");
     }
-    public void Eat(){
+
+    public void eat() {
         System.out.println("Я ем");
     }
 
     public String toString() {
 
-        String a;
-        if (age%10==1&&age%100!=11){
-            a="год";
-        }
-        else if (age%10>=2 && age%10<=4 && !(age%100>=12&& age%100 <= 14)){
-            a="года";
-        }
-        else {
-            a="лет";
+        String ageYear;
+        if (age % 10 == 1 && age % 100 != 11) {
+            ageYear = "год";
+        } else if (age % 10 >= 2 && age % 10 <= 4 && !(age % 100 >= 12 && age % 100 <= 14)) {
+            ageYear = "года";
+        } else {
+            ageYear = "лет";
         }
 
-        return "Привет! меня зовут " + name +", мне "+ age +" "+ a +", я вешу - "+ weight +" кг, мой цвет - "+ color;
+        return "Привет! меня зовут " + name + ", мне " + age + " " + ageYear + ", я вешу - " + weight + " кг, мой цвет - " + color;
     }
 }
